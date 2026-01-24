@@ -26,13 +26,13 @@ numberOfPersonVisiting = st.number_input("Number Of Person Visiting", min_value=
 numberOfFollowups = st.number_input("Number Of Followups", min_value=1, max_value=6, value=4, step=1)
 productPitched = st.selectbox("Product Pitched", ["Basic","Deluxe","Standard","Super Deluxe","King"])
 preferredPropertyStar = st.number_input("Preferred Property Star", min_value=3, max_value=5, value=4, step=1)
-maritalStatus = st.selectbox("Married","Divorced","Unmarried","Single"])
+maritalStatus = st.selectbox("Marital Status",["Married","Divorced","Unmarried","Single"])
 numberOfTrips = st.number_input("Number Of Trips", min_value=1, max_value=22, value=4, step=1)
-passport = st.selectbox("Yes","No"])
+passport = st.selectbox("Passport",["Yes","No"])
 pitchSatisfactionScore = st.number_input("Pitch Satisfaction Score", min_value=1, max_value=5, value=4, step=1)
-ownCar = st.selectbox("Yes","No"])
+ownCar = st.selectbox("OwnCar",["Yes","No"])
 numberOfChildrenVisiting = st.number_input("Number Of Children Visiting", min_value=0, max_value=3, value=1, step=1)
-designation = st.selectbox("Executive","Manager","Senior Manager","AVP","VP"])
+designation = st.selectbox("Designation",["Executive","Manager","Senior Manager","AVP","VP"])
 monthlyIncome = st.number_input("Monthly Income", min_value=1000, max_value=99999, value=25000, step=100)
 
 # Assemble input into DataFrame
