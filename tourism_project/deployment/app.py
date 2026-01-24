@@ -15,10 +15,9 @@ Please enter the details below to get a prediction.
 """)
 
 # User input
-#Type = st.selectbox("Machine Type", ["Self Enquiry","Company Invited"])
 age = st.number_input("Age of customer", min_value=18, max_value=61, value=43, step=1)
 typeofContact = st.selectbox("Type Of Contact", ["Self Enquiry","Company Invited"])
-cityTier = st.selectbox("City Tier", ["Tier 1","Tier 2","Tier 3"])
+#cityTier = st.selectbox("City Tier", ["Tier 1","Tier 2","Tier 3"])
 durationOfPitch = st.number_input("Duration of Pitch", min_value=5, max_value=127, value=20, step=1)
 occupation = st.selectbox("Occupation", ["Salaried","Small Business","Large Business","Free Lancer"])
 gender = st.selectbox("Gender", ["Male","Female"])
@@ -28,12 +27,36 @@ productPitched = st.selectbox("Product Pitched", ["Basic","Deluxe","Standard","S
 preferredPropertyStar = st.number_input("Preferred Property Star", min_value=3, max_value=5, value=4, step=1)
 maritalStatus = st.selectbox("Marital Status",["Married","Divorced","Unmarried","Single"])
 numberOfTrips = st.number_input("Number Of Trips", min_value=1, max_value=22, value=4, step=1)
-passport = st.selectbox("Passport",["Yes","No"])
+#passport = st.selectbox("Passport",["Yes","No"])
 pitchSatisfactionScore = st.number_input("Pitch Satisfaction Score", min_value=1, max_value=5, value=4, step=1)
-ownCar = st.selectbox("OwnCar",["Yes","No"])
+#ownCar = st.selectbox("OwnCar",["Yes","No"])
 numberOfChildrenVisiting = st.number_input("Number Of Children Visiting", min_value=0, max_value=3, value=1, step=1)
 designation = st.selectbox("Designation",["Executive","Manager","Senior Manager","AVP","VP"])
 monthlyIncome = st.number_input("Monthly Income", min_value=1000, max_value=99999, value=25000, step=100)
+
+#mapping the ordinal and binary fields to incorporate with ui
+
+cityTier_ui = st.selectbox(
+    "City Tier",
+    ["Tier 1", "Tier 2", "Tier 3"]
+)
+cityTier_map = {
+    "Tier 1": 1,
+    "Tier 2": 2,
+    "Tier 3": 3
+}
+
+cityTier = cityTier_map[cityTier_ui]
+
+passport_ui = st.selectbox("Passport", ["Yes", "No"])
+ownCar_ui = st.selectbox("Own Car", ["Yes", "No"])
+yes_no_map = {
+    "Yes": 1,
+    "No": 0
+}
+
+passport = yes_no_map[passport_ui]
+ownCar = yes_no_map[ownCar_ui]
 
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
